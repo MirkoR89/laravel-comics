@@ -80,8 +80,8 @@
             <div class="row">
                 <div class="col-xs-12 col-md-3 col-lg-2">
                     <ul class="list-unstyled">
-                        <li><a href=""><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                        <li><a href=""><i class="fas fa-book-open"></i> Comics</a></li>
+                        <li><a href="{{ route('admin.dashboard') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li><a href="{{ route('admin.comics.index') }}"><i class="fas fa-book-open"></i> Comics</a></li>
                     </ul>
                 </div>
                 <main class="col-xs-12 col-md-9 col-lg-10">
