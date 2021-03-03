@@ -18,16 +18,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
-    <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/8d58ee31c8.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel Comics') }}
+                    {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -74,6 +71,12 @@
                 </div>
             </div>
         </nav>
+
+        <ul class="list-unstyled">
+            <li><a href=""><i class="fas fa-dashcube    "></i></a></li>
+            <li></li>
+            <li></li>
+        </ul>
 
         <main class="py-4">
             @yield('content')
