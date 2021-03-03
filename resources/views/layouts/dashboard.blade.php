@@ -18,6 +18,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/8d58ee31c8.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div id="app">
@@ -72,15 +76,21 @@
             </div>
         </nav>
 
-        <ul class="list-unstyled">
-            <li><a href=""><i class="fas fa-dashcube    "></i></a></li>
-            <li></li>
-            <li></li>
-        </ul>
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-xs-12 col-md-3 col-lg-2">
+                    <ul class="list-unstyled">
+                        <li><a href=""><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li><a href=""><i class="fas fa-book-open"></i> Comics</a></li>
+                    </ul>
+                </div>
+                <main class="col-xs-12 col-md-9 col-lg-10">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+
     </div>
 </body>
 </html>
