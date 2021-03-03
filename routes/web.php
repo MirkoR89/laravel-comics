@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PageController@index')->name('home');
 
 Auth::routes();
+
+//Admin group routes
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group( function () {
     Route::get('/', 'AdminController@index')->name('dashboard');
-    //route resource
+    Route::resource('comics', 'ComicController');  
 });
