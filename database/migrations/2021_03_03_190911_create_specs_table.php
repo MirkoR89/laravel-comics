@@ -18,7 +18,7 @@ class CreateSpecsTable extends Migration
             $table->unsignedBigInteger('comic_id')->unique();
             $table->foreign('comic_id')->references('id')->on('comics');
             $table->string('series', 80);
-            $table->float('price', 3,2);
+            $table->float('price', 2, 2);
             $table->date('on_sale_data');
             $table->integer('volume_issue');
             $table->string('trim_size', 20);

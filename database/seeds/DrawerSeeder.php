@@ -1,7 +1,8 @@
 <?php
 
+use App\Drawer;
 use Illuminate\Database\Seeder;
-
+use Faker\Generator as Faker;
 class DrawerSeeder extends Seeder
 {
     /**
@@ -9,8 +10,12 @@ class DrawerSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        //
+        for ($i=0; $i <5; $i++) { 
+            $newDrawer = new Drawer;
+            $newDrawer->name = $faker->word();
+            $newDrawer->save();
+        }
     }
 }
