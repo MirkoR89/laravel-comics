@@ -25,7 +25,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.comics.create');
     }
 
     /**
@@ -36,7 +36,14 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedDate = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+        Comic::create($validatedDate);
+
+        $new_comic = Comic::orderBy('id', 'desc')->first();
+        return redirect()->route('admin.comics.index', $new_comic);
     }
 
     /**

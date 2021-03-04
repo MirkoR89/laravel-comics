@@ -17,13 +17,13 @@ class CreateSpecsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('comic_id')->unique()->nullable();
             $table->foreign('comic_id')->references('id')->on('comics')->nullable();
-            $table->string('series', 80);
-            $table->float('price');
-            $table->date('on_sale_data');
-            $table->integer('volume_issue');
-            $table->string('trim_size', 20);
-            $table->integer('page_count');
-            $table->string('rated', 20);
+            $table->string('series', 80)->nullable();
+            $table->float('price')->nullable();
+            $table->date('on_sale_data')->nullable();
+            $table->integer('volume_issue')->nullable();
+            $table->string('trim_size', 20)->nullable();
+            $table->integer('page_count')->nullable();
+            $table->string('rated', 20)->nullable();
             $table->timestamps();
         });
     }
