@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Author;
+use App\Drawer;
 use Faker\Generator as Faker;
 
-$factory->define(Author::class, function (Faker $faker) {
+$factory->define(Drawer::class, function (Faker $faker) {
     return [
         //
     ];

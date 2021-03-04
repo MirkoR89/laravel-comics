@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Spec extends Model
+class Drawer extends Model
 {
     /**
-     * The comics that belong to the Specs
-     * 
+     * The comics that belong to the Drawer
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function comics()
     {
-        return $this->hasMany(Comic::class);
+        return $this->belongsToMany(Comic::class);
     }
 }
