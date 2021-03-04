@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Spec extends Model
 {
     /**
-     * The comics that belong to the Specs
+     * The comic that belong to the Specs
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function comics()
     {
-        return $this->hasMany(Comic::class);
+        return $this->belongsTo(Comic::class);
     }
 }

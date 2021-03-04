@@ -13,7 +13,7 @@ class Comic extends Model
      */
     public function specs()
     {
-        return$this->belongsTo(Spec::class);
+        return$this->hasOne(Spec::class);
     }
 
     /**

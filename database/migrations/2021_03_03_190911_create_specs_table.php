@@ -15,6 +15,8 @@ class CreateSpecsTable extends Migration
     {
         Schema::create('specs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('comic_id')->unique();
+            $table->foreign('comic_id')->references('id')->on('comics');
             $table->string('series', 80);
             $table->float('price', 3,2);
             $table->date('on_sale_data');
