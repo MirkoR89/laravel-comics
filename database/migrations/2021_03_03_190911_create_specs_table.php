@@ -15,10 +15,10 @@ class CreateSpecsTable extends Migration
     {
         Schema::create('specs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('comic_id')->unique();
-            $table->foreign('comic_id')->references('id')->on('comics');
+            $table->unsignedBigInteger('comic_id')->unique()->nullable();
+            $table->foreign('comic_id')->references('id')->on('comics')->nullable();
             $table->string('series', 80);
-            $table->float('price', 2, 2);
+            $table->float('price');
             $table->date('on_sale_data');
             $table->integer('volume_issue');
             $table->string('trim_size', 20);

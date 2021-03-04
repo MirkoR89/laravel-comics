@@ -15,7 +15,7 @@ class ComicSeeder extends Seeder
     {
         for ($i=0; $i < 5; $i++) { 
             $newComic = new Comic();
-            $newComic->title = $faker->words(2);
+            $newComic->title = $faker->words(2, true);
             $newComic->description = $faker->text();
             $newComic->cover = $faker->imageUrl(640, 480, 'animals', true);
             $newComic->available = $faker->boolean();
