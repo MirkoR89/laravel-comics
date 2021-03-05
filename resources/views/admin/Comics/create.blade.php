@@ -1,6 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('content')
+@include('partials.errors')
 <div class="container">
     <h2>Add a new comics</h2>
     <form class="form-group" action="{{ route('admin.comics.store') }}" method="post">
@@ -11,6 +12,9 @@
                 placeholder="Text the title of comics">
             <small id="helpId" class="form-text text-muted">Text the title of comics</small>
         </div>
+        @error('title')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
 
         <div class="form-group my-4">
             <label for="dscription">Description</label>
@@ -18,6 +22,9 @@
                 aria-describedby="helpId" placeholder="Description"></textarea>
             <small id="helpId" class="form-text text-muted">Text the description of comics</small>
         </div>
+        @error('description')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
 
         {{-- <div class="form-group my-4">
             <label for="on_sale_date">On sale date</label>
