@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 use App\Comic;
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ComicController extends Controller
 {
@@ -36,10 +38,16 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
         $validatedDate = $request->validate([
             'title' => 'required',
-            'description' => 'required',
+            'description' => 'required', 
+            'cover' => 'nullable | image | max:500'
         ]);
+ 
+        $cover = Storage::put('cover_comics', $request->cover); 
+        $validatedDate['cover'] = $cover;
+
         Comic::create($validatedDate);
         return redirect()->route('admin.comics.index');
     }
@@ -93,8 +101,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('admin.comics.index');
     }
 }

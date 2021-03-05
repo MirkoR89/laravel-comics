@@ -4,8 +4,11 @@
 @include('partials.errors')
 <div class="container">
     <h2>Add a new comics</h2>
-    <form class="form-group" action="{{ route('admin.comics.store') }}" method="post">
+    
+    <form class="form-group" action="{{ route('admin.comics.store') }}" method="post" enctype="multipart/form-data">
         @csrf
+        
+        {{-- Input title --}}
         <div class="form-group my-4">
             <label for="title">Title</label>
             <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId"
@@ -16,6 +19,7 @@
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+        {{-- Input description --}}
         <div class="form-group my-4">
             <label for="dscription">Description</label>
             <textarea class="form-control" type="text" name="description" id="description" rows="10"
@@ -23,6 +27,15 @@
             <small id="helpId" class="form-text text-muted">Text the description of comics</small>
         </div>
         @error('description')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+        <div class="form-group">
+          <label for="cover">Cover</label>
+          <input type="file" name="cover" id="cover" class="form-control-file" placeholder="Add cover comics" aria-describedby="helpId">
+          <small id="helpId" class="text-muted">Add cover image fot the current comics</small>
+        </div>
+        @error('cover')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 

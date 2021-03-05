@@ -15,10 +15,10 @@ class CreateComicWriterTable extends Migration
     {
         Schema::create('comic_writer', function (Blueprint $table) {
             $table->unsignedBigInteger('comic_id');
-            $table->foreign('comic_id')->references('id')->on('comics');
+            $table->foreign('comic_id')->references('id')->on('comics')->onDelete('cascade');
 
             $table->unsignedBigInteger('writer_id');
-            $table->foreign('writer_id')->references('id')->on('writers');
+            $table->foreign('writer_id')->references('id')->on('writers')->onDelete('cascade');
         });
     }
 
