@@ -17,7 +17,7 @@
         <span class="card-text">{{$comic->specs->page_count}}</span>
         <span class="card-text">{{$comic->specs->page_rated}}</span> --}}
         <a href="{{ route('admin.comics.show', ['comic'=>$comic->id]) }}" class="btn btn-success">Show</a>
-        <a href="#" class="btn btn-primary">Edit</a>
+        <a href="{{ route('admin.comics.edit', ['comic'=>$comic->id]) }}" class="btn btn-primary">Edit</a>
         <a href="#" class="btn btn-danger">Delete</a>
     </div>
 </div>

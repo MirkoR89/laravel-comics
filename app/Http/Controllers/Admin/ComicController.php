@@ -61,9 +61,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        return view('admin.comics.edit', compact('comic'));
+
     }
 
     /**
@@ -73,9 +74,17 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $validatedDate = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+        
+        $data = $request->all();
+        $comic->update($data);
+
+        return redirect()->route('admin.comics.index');
     }
 
     /**
