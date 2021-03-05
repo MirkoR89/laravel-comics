@@ -14,7 +14,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::all();
+        $comics = Comic::latest()->get();
         return view('admin.comics.index', compact('comics'));
     }
 
@@ -41,9 +41,7 @@ class ComicController extends Controller
             'description' => 'required',
         ]);
         Comic::create($validatedDate);
-
-        $new_comic = Comic::orderBy('id', 'desc')->first();
-        return redirect()->route('admin.comics.index', $new_comic);
+        return redirect()->route('admin.comics.index');
     }
 
     /**
@@ -52,9 +50,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        //
+        return view('admin.comics.show', compact('comic'));
     }
 
     /**
