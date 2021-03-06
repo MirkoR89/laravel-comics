@@ -23,7 +23,7 @@ class CreateSpecsTable extends Migration
             $table->integer('volume_issue')->nullable();
             $table->string('trim_size', 20)->nullable();
             $table->integer('page_count')->nullable();
-            $table->string('rated', 20)->nullable();
+        $table->string('rated', 20)->nullable();
             $table->timestamps();
         });
     }

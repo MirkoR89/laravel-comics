@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Comic;
+use App\Drawer;
+use App\Writer;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
@@ -59,7 +61,7 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Comic $comic)
-    {
+    { 
         return view('admin.comics.show', compact('comic'));
     }
 
