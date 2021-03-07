@@ -16,9 +16,8 @@
 
                     {{ __('You are logged in!') }}
                     <hr>
-                    <p>On your left you can find a comics button to manage all comics.</p>
-                    <p>Press <i class="fas fa-book-open"></i> to create, edit and cancel the comincs</p>
-
+                    <h2>Welcome in your dashboard</h2>
+                    <p>From here you can start to update your database of comics.</p>
                 </div>
             </div>
         </div>

@@ -70,8 +70,8 @@
             {{-- Input number price --}}
             <div class="form-group mx-4">
                 <label for="price">Us Price</label>
-                <input type="number" id="price" name="price" placeholder="$" aria-describedby="helpPrice" min="0,1"
-                    max="999,00">
+                <input type="number" id="price" name="price" placeholder="$" aria-describedby="helpPrice" step=".01" min="0.01"
+                    max="999.00">
                 <small id="helpPrice" class="form-text text-muted">Insert the price of comics</small>
             </div>
             @error('price')
@@ -148,7 +148,7 @@
 
         {{-- Input select writers --}}
         <div class="form-group">
-            <label for="writers">writers</label>
+            <label for="writers">Writers</label>
             <select class="form-control" name="writers[]" id="writers" aria-describedby="helpWriters" multiple>
                 @foreach ($writers as $writer)
                 <option value="{{$writer->id}}">{{$writer->name}}</option>

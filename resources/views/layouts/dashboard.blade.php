@@ -27,6 +27,8 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                <a class="navbar text-dark" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                <a class="navbar text-dark" href="{{ route('admin.comics.index') }}">Comics</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -75,13 +77,7 @@
 
         <div class="container py-4">
             <div class="row">
-                <div class="col-xs-12 col-md-3 col-lg-2">
-                    <ul class="list-unstyled">
-                        <li><a href="{{ route('admin.dashboard') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                        <li><a href="{{ route('admin.comics.index') }}"><i class="fas fa-book-open"></i> Comics</a></li>
-                    </ul>
-                </div>
-                <main class="col-xs-12 col-md-9 col-lg-10">
+                <main class="col-xs-12 col-md-9 col-lg-12">
                     @yield('content')
                 </main>
             </div>

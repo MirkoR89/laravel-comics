@@ -47,7 +47,7 @@ class ComicController extends Controller
         $validatedDate = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'cover' => 'nullable | image | max:500',
+            'cover' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:500',
             'available' => 'required',
             'series' => 'required',
             'price' => 'required',
