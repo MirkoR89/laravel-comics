@@ -5,7 +5,7 @@
 
         li {
             height: 45px;
-            width: 200px;
+            width: 165px;
             border-right: 1px solid wihte;
             display: flex;
             justify-content: center;
@@ -41,14 +41,18 @@
     }
 
     li {
-        font-size: 15px;
+        font-size: 13px;
         font-weight: 700;
         text-transform: uppercase;
         padding-bottom: 3px;
         
         a {
             color: $grey-comic;
-            height: 30px;
+            padding: 60px 8px;
+
+            &:hover {
+                border-bottom: 7px solid $blue-comic;
+            }
         }
     }
     .search {

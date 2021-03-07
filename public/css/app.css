@@ -10950,7 +10950,7 @@ a.text-dark:focus {
 
 .navtop ul li {
   height: 45px;
-  width: 200px;
+  width: 165px;
   border-right: 1px solid wihte;
   display: flex;
   justify-content: center;
@@ -10983,7 +10983,7 @@ a.text-dark:focus {
 }
 
 .navbottom li {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   padding-bottom: 3px;
@@ -10991,7 +10991,11 @@ a.text-dark:focus {
 
 .navbottom li a {
   color: #303030;
-  height: 30px;
+  padding: 60px 8px;
+}
+
+.navbottom li a:hover {
+  border-bottom: 7px solid #0182f9;
 }
 
 .navbottom .search input {
@@ -11010,5 +11014,82 @@ a.text-dark:focus {
   font-size: 15px;
   font-weight: 700;
   color: #303030;
+}
+
+.dc_menu {
+  background-color: #0182f9;
+}
+
+.dc_menu ul {
+  height: 160px;
+  margin: 1px;
+  padding: 0 60px;
+}
+
+.dc_menu li {
+  color: white;
+  text-transform: uppercase;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.dc_menu li img {
+  margin: 0 10px;
+  height: 40px;
+}
+
+.footer_top {
+  background-image: url(/images/footer-bg.jpg?dfd68d2946f211e1b678af05fd2f830b);
+  color: white;
+}
+
+.footer_top .dc_links {
+  margin: 50px 30px 25px 0;
+}
+
+.footer_top .dc_links li {
+  color: gray;
+}
+
+.footer_top .dc_links h4 {
+  font-weight: 700;
+  color: white;
+  margin-top: 15px;
+}
+
+.footer_top p {
+  color: gray;
+}
+
+.footer_top p span {
+  color: #0182f9;
+}
+
+.footer_bottom {
+  background-color: #303030;
+}
+
+.footer_bottom .social {
+  height: 140px;
+}
+
+.footer_bottom .social button {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #303030;
+  border: 3px solid #0182f9;
+  padding: 10px;
+}
+
+.footer_bottom .social span {
+  color: #0182f9;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.footer_bottom .social img {
+  margin: 0 8px;
 }
 

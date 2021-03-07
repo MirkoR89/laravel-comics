@@ -1,0 +1,83 @@
+.dc_menu {
+
+    background-color: $blue-comic;
+
+    ul {
+        height: 160px;
+        margin: 1px;
+        padding: 0 60px;
+    }
+
+    li {
+        color: white;
+        text-transform: uppercase;
+        color: white;
+        font-size: 13px;
+        font-weight: 500;
+
+        img {
+            margin: 0 10px;
+            height: 40px;
+        }
+    }
+}
+
+.footer_top {
+    background-image: url('img/footer-bg.jpg');
+    color: white;
+    
+
+    .dc_links {
+
+        margin: 50px 30px 25px 0;
+
+        li {
+            color: gray;
+        }
+
+        h4 {
+            font-weight: 700;
+            color: white;
+            margin-top: 15px;
+        }
+    }
+
+    p {
+        color: gray;
+
+        span {
+            color: $blue-comic;
+        }
+    }
+}
+
+.footer_bottom {
+
+    background-color: $grey-comic;
+
+    .social {
+
+        height: 140px;
+
+        button {
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            background-color: $grey-comic;
+            border: 3px solid $blue-comic;
+            padding: 10px;
+        }
+
+        span {
+            color: $blue-comic;
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        img {
+            margin: 0 8px;
+        }
+
+
+    }
+}
