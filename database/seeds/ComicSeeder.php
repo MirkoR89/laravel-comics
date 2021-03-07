@@ -19,6 +19,13 @@ class ComicSeeder extends Seeder
             $newComic->description = $faker->text();
             $newComic->cover = $faker->imageUrl(640, 480, 'animals', true);
             $newComic->available = $faker->boolean();
+            $newComic->series = $faker->word();
+            $newComic->price = $faker->randomFloat(2, 0, 10);
+            $newComic->on_sale_date = $faker->dateTime();
+            $newComic->volume_issue = $faker->randomDigit();
+            $newComic->trim_size = $faker->bothify();
+            $newComic->page_count = $faker->randomDigit();
+            $newComic->rated = $faker->word();
             $newComic->save();
         }
     }

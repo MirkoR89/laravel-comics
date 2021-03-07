@@ -19,6 +19,13 @@ class CreateComicsTable extends Migration
             $table->text('description');
             $table->string('cover')->nullable();
             $table->boolean('available')->nullable();
+            $table->string('series', 80)->nullable();
+            $table->float('price')->nullable();
+            $table->date('on_sale_date')->nullable();
+            $table->integer('volume_issue')->nullable();
+            $table->string('trim_size', 20)->nullable();
+            $table->integer('page_count')->nullable();
+            $table->string('rated', 20)->nullable();
             $table->timestamps();
         });
     }

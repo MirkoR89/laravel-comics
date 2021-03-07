@@ -4,6 +4,7 @@
 @include('partials.errors')
 <div class="container">
     <h2>Edit {{$comic->title}}</h2>
+    
     <form class="form-group" action="{{ route('admin.comics.update', ['comic'=>$comic->id]) }}" method="post">
         @csrf
         @method('PUT')

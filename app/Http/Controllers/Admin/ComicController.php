@@ -29,7 +29,10 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('admin.comics.create');
+        $drawers = Drawer::all();
+        $writers = Writer::all();
+
+        return view('admin.comics.create', compact('drawers', 'writers'));
     }
 
     /**
@@ -43,15 +46,28 @@ class ComicController extends Controller
         //dd($request->all());
         $validatedDate = $request->validate([
             'title' => 'required',
-            'description' => 'required', 
-            'cover' => 'nullable | image | max:500'
+            'description' => 'required',
+            'cover' => 'nullable | image | max:500',
+            'available' => 'required',
+            'series' => 'required',
+            'price' => 'required',
+            'on_sale_date' => 'required',
+            'volume_issue' => 'required',
+            'trim_size' => 'required',
+            'page_count' => 'required',
+            'rated' => 'required'
+
         ]);
  
         $cover = Storage::put('cover_comics', $request->cover); 
         $validatedDate['cover'] = $cover;
 
-        Comic::create($validatedDate);
-        return redirect()->route('admin.comics.index');
+        $new_comic = Comic::create($validatedDate);
+
+        $new_comic->drawers()->attach($request->drawers);
+        $new_comic->writers()->attach($request->writers);
+
+        return redirect()->route('admin.comics.index', $new_comic);
     }
 
     /**

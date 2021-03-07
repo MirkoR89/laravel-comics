@@ -12,7 +12,7 @@
     <div class="card-body">
         <h5 class="card-title">{{$comic->title}}</h5>
         <p class="card-text">{{$comic->description}}</p>
-        <span class="card-text">{{$comic->specs->price}}</span>
+        <span class="card-text">{{$comic->price}}</span>
         <a href="{{ route('admin.comics.show', ['comic'=>$comic->id]) }}" class="btn btn-success">Show</a>
         <a href="{{ route('admin.comics.edit', ['comic'=>$comic->id]) }}" class="btn btn-primary">Edit</a>
 
