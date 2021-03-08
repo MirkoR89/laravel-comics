@@ -32,7 +32,7 @@
                     <a class="nav-link active" href="#">characters</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">comics</a>
+                    <a class="nav-link" href="{{ route('comics') }}">comics</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">movies</a>

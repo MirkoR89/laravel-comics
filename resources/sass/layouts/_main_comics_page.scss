@@ -1,0 +1,32 @@
+.comics_list {
+    position: relative;
+    
+    .title_section {
+        background-color: $blue-comic;
+        width: 390px;
+        margin-top: 25px;
+        position: absolute;
+        left: 260px;
+        top: -47px;
+        
+        h3 {
+            font-weight: 800;
+            color: white;
+        }
+    }
+    
+    .comics {
+        background-color: $grey-comic;
+        overflow-x: hidden;
+
+        span {
+            color: white;
+            font-weight: 500;
+
+            &:last-child {
+                color: $blue-comic;
+            }
+        }
+
+    }
+}

@@ -11093,3 +11093,35 @@ a.text-dark:focus {
   margin: 0 8px;
 }
 
+.comics_list {
+  position: relative;
+}
+
+.comics_list .title_section {
+  background-color: #0182f9;
+  width: 390px;
+  margin-top: 25px;
+  position: absolute;
+  left: 260px;
+  top: -47px;
+}
+
+.comics_list .title_section h3 {
+  font-weight: 800;
+  color: white;
+}
+
+.comics_list .comics {
+  background-color: #303030;
+  overflow-x: hidden;
+}
+
+.comics_list .comics span {
+  color: white;
+  font-weight: 500;
+}
+
+.comics_list .comics span:last-child {
+  color: #0182f9;
+}
+
