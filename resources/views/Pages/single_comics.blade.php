@@ -7,11 +7,11 @@
         </div>
 
         <div class="img_cover">
-            {{-- <img src="{{ asset('storage/' . $comic->cover ) }}" alt=""> --}}
+            <img src="{{ asset('storage/' . $comic->cover ) }}" alt="">
         </div>
 
         <div class="info_comics">
-            {{-- <h2>{{$comic->title}}</h2> --}}
+            <h2>{{$comic->title}}</h2>
             <div class="price_available">
 
             </div>

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PageController@index')->name('comics');
-Route::get('single_comics', 'PageController@comics')->name('single_comics');
+Route::get('/single_comics/{id}', 'PageController@show')->name('single_comics');
 
 
 Auth::routes();

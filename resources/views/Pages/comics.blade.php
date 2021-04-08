@@ -8,7 +8,7 @@
     <div class="comics fluid-container d-flex pt-3">
         @foreach ($comics as $comic)
         <div class="comics_card d-flex flex-column mx-2 pt-4">
-            <a href="{{ route('single_comics', ['comic'=>$comic->id]) }}"><img src="{{ asset('storage/' . $comic->cover ) }}" alt=""></a>
+            <a href="{{ route('single_comics', $comic->id) }}"><img src="{{ asset('storage/' . $comic->cover ) }}" alt=""></a>
             <span class="mt-2">{{$comic->title}}</span>
 
             @if ($comic->available == 1)
