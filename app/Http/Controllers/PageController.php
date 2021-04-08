@@ -13,8 +13,10 @@ class PageController extends Controller
         return view('pages.comics', compact('comics'));
     }
 
-    public function comics()
+    public function comics(Comic $comic)
     {
-        return view('pages.single_comics');
+        $comic = Comic::find($comic);
+        return view('pages.single_comics', compact('comic'));
+        dd('comic');
     }
 }
