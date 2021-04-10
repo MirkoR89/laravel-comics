@@ -48,6 +48,7 @@ class ComicController extends Controller
             'title' => 'required',
             'description' => 'required',
             'cover' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:500',
+            'banner' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:500',
             'available' => 'required',
             'series' => 'required',
             'price' => 'required',
@@ -61,6 +62,9 @@ class ComicController extends Controller
  
         $cover = Storage::put('cover_comics', $request->cover); 
         $validatedDate['cover'] = $cover;
+
+        $banner = Storage::put('banner_comics', $request->banner); 
+        $validatedDate['banner'] = $banner;
 
         $new_comic = Comic::create($validatedDate);
 
@@ -78,7 +82,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     { 
-        dd($comic);
+        //dd($comic);
         return view('admin.comics.show', compact('comic'));
     }
 

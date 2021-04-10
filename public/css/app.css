@@ -11125,3 +11125,44 @@ a.text-dark:focus {
   color: #0182f9;
 }
 
+.single_comics .jumbo {
+  background-image: url(/images/crime_syndicate_bg.jpg?522c7bbf6b72e0595adfc740243c311d);
+  height: 450px;
+}
+
+.single_comics .bg_blue {
+  background-color: #0182f9;
+  height: 100px;
+}
+
+.single_comics .container .img_cover {
+  position: absolute;
+  bottom: 220px;
+}
+
+.single_comics .container .img_cover img {
+  height: 350px;
+  border: 2px solid white;
+}
+
+.single_comics .container .info_comics h2 {
+  font-size: 35px;
+  font-weight: 700;
+  color: #303030;
+}
+
+.single_comics .container .info_comics .price_available {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+  width: 720px;
+  height: 70px;
+  background-color: #55ba5a;
+}
+
+.single_comics .container .info_comics .price_available .price_available_cont {
+  width: 450px;
+  border-right: 1px solid black;
+}
+

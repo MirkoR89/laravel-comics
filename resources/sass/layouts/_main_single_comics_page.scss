@@ -1,0 +1,45 @@
+.single_comics {
+    .jumbo {
+        background-image: url('../img/crime_syndicate_bg.jpg');
+        height: 450px;
+    }
+    .bg_blue {
+        background-color: $blue-comic;
+        height: 100px;
+    }
+
+    .container {
+        .img_cover {
+            position: absolute;
+            bottom: 220px;
+            
+            img {
+                height: 350px;
+                border: 2px solid white;
+            }
+        }
+
+        .info_comics {
+            h2 {
+              font-size: 35px;
+              font-weight: 700;
+              color: $grey-comic;  
+            }
+
+            .price_available {
+                color: white;
+                font-size: 18px;
+                font-weight: 500;
+                border-bottom: 1px solid black;
+                width: 720px;
+                height: 70px;
+                background-color:$green-comic;
+
+                .price_available_cont {
+                    width: 450px;
+                    border-right: 1px solid black;
+                }
+            }
+        }
+    }
+}

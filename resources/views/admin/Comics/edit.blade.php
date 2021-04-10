@@ -3,10 +3,11 @@
 @section('content')
 @include('partials.errors')
 <div class="container">
-    <h2>Add a new comics</h2>
+    <h2>Edit a new comics</h2>
 
-    <form class="form-group" action="{{ route('admin.comics.store') }}" method="post" enctype="multipart/form-data">
+    <form class="form-group" action="{{ route('admin.comics.update') }}" method="post" enctype="multipart/form-data">
         @csrf
+
 
         {{-- Input text title --}}
         <div class="form-group my-4">
