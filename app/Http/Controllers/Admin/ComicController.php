@@ -44,7 +44,7 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
-        $validatedDate = $request->validate([
+        $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
             'cover' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:500',
@@ -57,16 +57,15 @@ class ComicController extends Controller
             'trim_size' => 'required',
             'page_count' => 'required',
             'rated' => 'required'
-
         ]);
  
         $cover = Storage::put('cover_comics', $request->cover); 
-        $validatedDate['cover'] = $cover;
+        $validatedData['cover'] = $cover;
 
         $banner = Storage::put('banner_comics', $request->banner); 
-        $validatedDate['banner'] = $banner;
+        $validatedData['banner'] = $banner;
 
-        $new_comic = Comic::create($validatedDate);
+        $new_comic = Comic::create($validatedData);
 
         $new_comic->drawers()->attach($request->drawers);
         $new_comic->writers()->attach($request->writers);
@@ -106,13 +105,32 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $validatedDate = $request->validate([
+        $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'cover' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:500',
+            'banner' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:500',
+            'available' => 'required',
+            'series' => 'required',
+            'price' => 'required',
+            'on_sale_date' => 'required',
+            'volume_issue' => 'required',
+            'trim_size' => 'required',
+            'page_count' => 'required',
+            'rated' => 'required'
         ]);
+
+        if ($request->hasFile('cover')) {
+            $cover = Storage::put('cover_comics', $request->cover);
+            $validatedData['cover'] = $cover;
+        }
+
+        if ($request->hasFile('banner')) {
+            $banner = Storage::put('banner_comics', $request->banner);
+            $validatedData['banner'] = $banner;
+        }
         
-        $data = $request->all();
-        $comic->update($data);
+        $comic->update($validatedData);
 
         return redirect()->route('admin.comics.index');
     }

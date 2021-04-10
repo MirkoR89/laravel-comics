@@ -21,7 +21,7 @@
 
         {{-- Input textarea description --}}
         <div class="form-group my-4">
-            <label for="dscription">Description</label>
+            <label for="decription">Description</label>
             <textarea class="form-control" type="text" name="description" id="description" rows="10"
                 aria-describedby="helpDesctiption" placeholder="Description"></textarea>
             <small id="helpDesctiption" class="form-text text-muted">Text the description of comics</small>

@@ -5,16 +5,16 @@
 <div class="container">
     <h2>Edit a new comics</h2>
 
-    <form class="form-group" action="{{ route('admin.comics.update') }}" method="post" enctype="multipart/form-data">
+    <form class="form-group" action="{{ route('admin.comics.update', ['comic'=>$comic->id]) }}" method="post" enctype="multipart/form-data">
         @csrf
-
+        @method('PUT')
 
         {{-- Input text title --}}
         <div class="form-group my-4">
             <label for="title">Title</label>
             <input type="text" class="form-control" name="title" id="title" aria-describedby="helpTitle"
-                placeholder="Text the title of comics">
-            <small id="helpTitle" class="form-text text-muted">Text the title of comics</small>
+                placeholder="Text the title of comics" value="{{ old('title') ? old('title') : $comic->title}}">
+            <small id="helpTitle" class="form-text text-muted">Edit the title of comics</small>
         </div>
         @error('title')
         <div class="alert alert-danger">{{ $message }}</div>
@@ -22,44 +22,54 @@
 
         {{-- Input textarea description --}}
         <div class="form-group my-4">
-            <label for="dscription">Description</label>
+            <label for="decription">Description</label>
             <textarea class="form-control" type="text" name="description" id="description" rows="10"
                 aria-describedby="helpDesctiption" placeholder="Description"></textarea>
-            <small id="helpDesctiption" class="form-text text-muted">Text the description of comics</small>
+            <small id="helpDesctiption" class="form-text text-muted">value="{{ old('description') ? old('description') : $comic->description}}"</small>
         </div>
         @error('description')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
         <div class="d-flex">
-            {{-- Input file cover --}}
-            <div class="form-group">
-                <label for="cover">Cover</label>
-                <input type="file" name="cover" id="cover" class="form-control-file" placeholder="Attach cover comics"
-                    aria-describedby="helpCover">
-                <small id="helpCover" class="text-muted">Attach cover image fot the current comics</small>
-            </div>
-            @error('cover')
-            <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-
             {{-- Input file Banner --}}
             <div class="form-group">
                 <label for="banner">Banner</label>
-                <input type="file" name="Banner" id="Banner" class="form-control-file" placeholder="Attach banner comics"
-                    aria-describedby="helpBanner">
-                <small id="helpBanner" class="text-muted">Attach banner image fot the current comics</small>
+                @if ($comic->banner)
+                    <img src="{{asset('storage/' . $comic->banner)}}" alt="">
+                @endif
+
+                <input type="file" name="banner" id="banner" class="form-control-file" placeholder="Edit banner comics"
+                    aria-describedby="helpbanner">
+                <small id="helpbanner" class="text-muted">Edit banner image for the current comics</small>
             </div>
-            @error('Banner')
+            @error('banner')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+            <hr>
+
+            {{-- Input file cover --}}
+            <div class="form-group">
+                <label for="banner">banner</label>
+                @if ($comic->banner)
+                    <img src="{{asset('storage/' . $comic->banner)}}" alt="">
+                @endif
+
+                <input type="file" name="banner" id="banner" class="form-control-file" placeholder="Attach banner comics"
+                    aria-describedby="helpbanner">
+                <small id="helpbanner" class="text-muted">Edit banner image for the current comics</small>
+            </div>
+            @error('banner')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
     
             {{-- Input radio available--}}
             <div class="form-check my-4">
-                <input type="radio" class="form-check-input" name="available" id="available" value="1" checked>
+                <input type="radio" class="form-check-input" name="available" id="available" value="1" {{$comic->available ? '' : 'checked'}}>
                 <label for="available" class="form-check-label">Avaliable</label>
                 <br>
-                <input type="radio" class="form-check-input" name="available" id="available" value="0">
+                <input type="radio" class="form-check-input" name="available" id="available" value="0" {{$comic->available ? '' : 'checked'}}>
                 <label for="available" class="form-check-label">Not Avaliable</label>
             </div>
             @error('available')
@@ -77,7 +87,7 @@
         @error('series')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-        
+           {{-- ========================================================= --}}
         <div class="d-flex">
             {{-- Input number price --}}
             <div class="form-group mx-4">
