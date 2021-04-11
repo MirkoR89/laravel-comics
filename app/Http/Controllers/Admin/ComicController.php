@@ -43,12 +43,11 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
         $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'cover' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:500',
-            'banner' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:1000',
+            'cover' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:1024',
+            'banner' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:1024',
             'available' => 'required',
             'series' => 'required',
             'price' => 'required',
@@ -62,7 +61,7 @@ class ComicController extends Controller
         $cover = Storage::put('cover_comics', $request->cover); 
         $validatedData['cover'] = $cover;
 
-        $banner = Storage::put('banner_comics', $request->banner); 
+        $banner = Storage::put('banner_comics', $request->banner);
         $validatedData['banner'] = $banner;
 
         $new_comic = Comic::create($validatedData);
@@ -105,12 +104,11 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        dd($request->drawers);
         $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'cover' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:500',
-            'banner' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:500',
+            'cover' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:1024',
+            'banner' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:1024',
             'available' => 'required',
             'series' => 'required',
             'price' => 'required',
@@ -122,18 +120,20 @@ class ComicController extends Controller
         ]);
 
         if ($request->hasFile('cover')) {
+            Storage::delete($comic->cover);
             $cover = Storage::put('cover_comics', $request->cover);
             $validatedData['cover'] = $cover;
         }
 
         if ($request->hasFile('banner')) {
+            Storage::delete($comic->banner);
             $banner = Storage::put('banner_comics', $request->banner);
             $validatedData['banner'] = $banner;
         }
         
-        $comic->update($validatedData);
         $comic->drawers()->sync($request->drawers);
         $comic->writers()->sync($request->writers);
+        $comic->update($validatedData);
         
         return redirect()->route('admin.comics.index');
     }
@@ -146,6 +146,9 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
+        Storage::delete($comic->cover);
+        Storage::delete($comic->banner);
+
         $comic->delete();
         return redirect()->route('admin.comics.index');
     }

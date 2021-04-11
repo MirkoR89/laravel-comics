@@ -152,7 +152,7 @@
     @enderror
 
     {{-- Input select drawers --}}
-    {{-- <div class="form-group">
+    <div class="form-group">
         <label for="drawers">Drawers</label>
         <select class="form-control" name="drawers[]" id="drawers" aria-describedby="helpDrawers" multiple>
             @if ($drawers)
@@ -165,10 +165,10 @@
     </div>
     @error('drawers')
     <div class="alert alert-danger">{{ $message }}</div>
-    @enderror --}}
+    @enderror
 
     {{-- Input select writers --}}
-    {{-- <div class="form-group">
+    <div class="form-group">
         <label for="writers">Writers</label>
         <select class="form-control" name="writers[]" id="writers" aria-describedby="helpWriters" multiple>
             @if ($writers)
@@ -181,7 +181,7 @@
     </div>
     @error('writers')
     <div class="alert alert-danger">{{ $message }}</div>
-    @enderror --}}
+    @enderror
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

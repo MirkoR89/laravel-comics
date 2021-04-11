@@ -45,9 +45,9 @@
         {{-- Input file Banner --}}
         <div class="form-group">
             <label for="banner">Banner</label>
-            <input type="file" name="Banner" id="Banner" class="form-control-file" placeholder="Attach banner comics"
+            <input type="file" name="banner" id="banner" class="form-control-file" placeholder="Attach banner comics"
                 aria-describedby="helpBanner">
-            <small id="helpBanner" class="text-muted">Attach banner image fot the current comics</small>
+            <small id="helpBanner" class="text-muted">Attach banner image for the current comics</small>
         </div>
         @error('Banner')
         <div class="alert alert-danger">{{ $message }}</div>
