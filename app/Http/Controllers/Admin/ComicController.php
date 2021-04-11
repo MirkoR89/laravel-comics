@@ -48,7 +48,7 @@ class ComicController extends Controller
             'title' => 'required',
             'description' => 'required',
             'cover' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:500',
-            'banner' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:500',
+            'banner' => 'nullable | mimes:jpeg,png,jpg,gif,svg | max:1000',
             'available' => 'required',
             'series' => 'required',
             'price' => 'required',
@@ -105,6 +105,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        dd($request->drawers);
         $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -131,7 +132,9 @@ class ComicController extends Controller
         }
         
         $comic->update($validatedData);
-
+        $comic->drawers()->sync($request->drawers);
+        $comic->writers()->sync($request->writers);
+        
         return redirect()->route('admin.comics.index');
     }
 
