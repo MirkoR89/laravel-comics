@@ -52,13 +52,17 @@
     {{-- Input file banner --}}
     <div class="form-group mt-5">
         <label for="banner">Banner</label>
-        @if ($comic->banner)
-            <img src="{{asset('storage/' . $comic->banner)}}" alt="">
-        @endif
-
-        <input type="file" name="banner" id="banner" class="form-control-file" placeholder="Edit banner comics"
-            aria-describedby="helpbanner">
-        <small id="helpBanner" class="text-muted">Edit banner image for the current comics</small>
+        <div class="d-flex align-items-center">
+            @if ($comic->banner)
+                <img class="w-75" src="{{asset('storage/' . $comic->banner)}}" alt="">
+            @endif
+    
+            <div class="admin_input_file w-25 ml-4">
+                <input type="file" name="banner" id="banner" class="form-control-file" placeholder="Edit banner comics"
+                    aria-describedby="helpbanner">
+                <small id="helpBanner" class="text-muted">Edit banner image for the current comics</small>
+            </div>
+        </div>
     </div>
     @error('banner')
     <div class="alert alert-danger">{{ $message }}</div>
@@ -151,37 +155,40 @@
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 
-    {{-- Input select drawers --}}
-    <div class="form-group">
-        <label for="drawers">Drawers</label>
-        <select class="form-control" name="drawers[]" id="drawers" aria-describedby="helpDrawers" multiple>
-            @if ($drawers)
-            @foreach ($drawers as $drawer)
-            <option value="{{$drawer->id}}" {{$comic->drawers->contains($drawer) ? 'selected' : ' '}}>{{$drawer->name}}</option>
-            @endforeach
-            @endif
-        </select>
-        <small id="helpDrawers" class="text-muted">Edit selection the drawers</small>
-    </div>
-    @error('drawers')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
+    <div class="d-flex justify-content-around">
 
-    {{-- Input select writers --}}
-    <div class="form-group">
-        <label for="writers">Writers</label>
-        <select class="form-control" name="writers[]" id="writers" aria-describedby="helpWriters" multiple>
-            @if ($writers)
-            @foreach ($writers as $writer)
-            <option value="{{$writer->id}}" {{$comic->writers->contains($writer) ? 'selected' : ''}}>{{$writer->name}}</option>
-            @endforeach
-            @endif
-        </select>
-        <small id="helpWriters" class="text-muted">Edit selection the writers</small>
+        {{-- Input select drawers --}}
+        <div class="form-group">
+            <label for="drawers">Drawers</label>
+            <select class="form-control" name="drawers[]" id="drawers" aria-describedby="helpDrawers" multiple>
+                @if ($drawers)
+                @foreach ($drawers as $drawer)
+                <option value="{{$drawer->id}}" {{$comic->drawers->contains($drawer) ? 'selected' : ' '}}>{{$drawer->name}}</option>
+                @endforeach
+                @endif
+            </select>
+            <small id="helpDrawers" class="text-muted">Edit selection the drawers</small>
+        </div>
+        @error('drawers')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    
+        {{-- Input select writers --}}
+        <div class="form-group">
+            <label for="writers">Writers</label>
+            <select class="form-control" name="writers[]" id="writers" aria-describedby="helpWriters" multiple>
+                @if ($writers)
+                @foreach ($writers as $writer)
+                <option value="{{$writer->id}}" {{$comic->writers->contains($writer) ? 'selected' : ''}}>{{$writer->name}}</option>
+                @endforeach
+                @endif
+            </select>
+            <small id="helpWriters" class="text-muted">Edit selection the writers</small>
+        </div>
+        @error('writers')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
-    @error('writers')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

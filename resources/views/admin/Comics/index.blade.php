@@ -36,11 +36,11 @@
             <div class="card-body d-flex justify-content-around">
                 {{-- Button show--}}
                 <a href="{{ route('admin.comics.show', ['comic'=>$comic->id]) }}"
-                    class="card-link btn btn-success">Show</a>
+                    class=" card-link btn btn-success">Show</a>
 
                 {{-- Button show--}}
                 <a href="{{ route('admin.comics.edit', ['comic'=>$comic->id]) }}"
-                    class="card-link btn btn-info">Edit</a>
+                    class="ml-0 card-link btn btn-info">Edit</a>
 
                 {{-- Button delete--}}
                 <form action="{{ route('admin.comics.destroy', ['comic'=>$comic->id]) }}" method="post">

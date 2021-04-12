@@ -120,9 +120,9 @@ class ComicController extends Controller
             'volume_issue' => 'required',
             'trim_size' => 'required',
             'page_count' => 'required',
-            'rated' => 'required',
-            'drawers'=>'exists:drawers,id',
-            'writers'=>'exists:writers,id'
+            'rated' => 'required'
+            // 'drawers'=>'exists:drawers,id',
+            // 'writers'=>'exists:writers,id'
         ]);
 
         if ($request->hasFile('cover')) {
