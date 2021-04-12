@@ -66,10 +66,10 @@
 
     {{-- Input radio available--}}
     <div class="form-check my-4">
-        <input type="radio" class="form-check-input" name="available" id="available" value="1" {{$comic->available ? '' : 'checked'}}>
+        <input type="radio" class="form-check-input" name="available" id="available" value="1" {{$comic->available ? 'checked' : ''}}>
         <label for="available" class="form-check-label">Avaliable</label>
         <br>
-        <input type="radio" class="form-check-input" name="available" id="available" value="0" {{$comic->available ? '' : 'checked'}}>
+        <input type="radio" class="form-check-input" name="available" id="available" value="0" {{$comic->available ? ' ' : 'checked'}}>
         <label for="available" class="form-check-label">Not Avaliable</label>
     </div>
     @error('available')
@@ -157,7 +157,7 @@
         <select class="form-control" name="drawers[]" id="drawers" aria-describedby="helpDrawers" multiple>
             @if ($drawers)
             @foreach ($drawers as $drawer)
-            <option value="{{$drawer->id}}"{{$drawer->name->contains($drawer) ? 'selected' : ' '}}>{{$drawer->name}}</option>
+            <option value="{{$drawer->id}}" {{$comic->drawers->contains($drawer) ? 'selected' : ' '}}>{{$drawer->name}}</option>
             @endforeach
             @endif
         </select>
@@ -173,7 +173,7 @@
         <select class="form-control" name="writers[]" id="writers" aria-describedby="helpWriters" multiple>
             @if ($writers)
             @foreach ($writers as $writer)
-            <option value="{{$writer->id}}"{{$writer->name->contains($writer) ? 'selected' : ' '}}>{{$writer->name}}</option>
+            <option value="{{$writer->id}}" {{$comic->writers->contains($writer) ? 'selected' : ''}}>{{$writer->name}}</option>
             @endforeach
             @endif
         </select>

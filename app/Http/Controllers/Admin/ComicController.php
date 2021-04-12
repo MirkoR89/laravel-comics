@@ -55,7 +55,9 @@ class ComicController extends Controller
             'volume_issue' => 'required',
             'trim_size' => 'required',
             'page_count' => 'required',
-            'rated' => 'required'
+            'rated' => 'required',
+            'drawers'=>'exists:drawers,id',
+            'writers'=>'exists:writers,id'
         ]);
  
         $cover = Storage::put('cover_comics', $request->cover); 
@@ -92,7 +94,9 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        return view('admin.comics.edit', compact('comic'));
+        $drawers = Drawer::all();
+        $writers = Writer::all();
+        return view('admin.comics.edit', compact('comic', 'drawers', 'writers'));
     }
 
     /**
@@ -116,7 +120,9 @@ class ComicController extends Controller
             'volume_issue' => 'required',
             'trim_size' => 'required',
             'page_count' => 'required',
-            'rated' => 'required'
+            'rated' => 'required',
+            'drawers'=>'exists:drawers,id',
+            'writers'=>'exists:writers,id'
         ]);
 
         if ($request->hasFile('cover')) {
@@ -131,10 +137,11 @@ class ComicController extends Controller
             $validatedData['banner'] = $banner;
         }
         
-        $comic->drawers()->sync($request->drawers);
-        $comic->writers()->sync($request->writers);
         $comic->update($validatedData);
         
+        $comic->drawers()->sync($request->drawers);
+        $comic->writers()->sync($request->writers);
+
         return redirect()->route('admin.comics.index');
     }
 
