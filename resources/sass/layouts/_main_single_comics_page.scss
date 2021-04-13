@@ -1,8 +1,10 @@
 .single_comics {
-    // .jumbo {
-    //     background-image: url('../img/crime_syndicate_bg.jpg');
-    //     height: 450px;
-    // }
+    .jumbo {
+        img {
+            width: 100vw;
+            height: 100vh;
+        }
+    }
     .bg_blue {
         background-color: $blue-comic;
         height: 100px;
@@ -11,10 +13,10 @@
     .container {
         .img_cover {
             position: absolute;
-            bottom: 220px;
+            bottom: -300px;
             
             img {
-                height: 350px;
+                height: 400px;
                 border: 2px solid white;
             }
         }

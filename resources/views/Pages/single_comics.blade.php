@@ -2,7 +2,9 @@
 
 @section('main')
     <section class="single_comics">
-        <div class="jumbo"></div>
+        <div class="jumbo">
+            <img src="{{ asset('storage/' . $comic->banner) }}" alt="">
+        </div>
         <div class="bg_blue"></div>
 
         <div class="container">

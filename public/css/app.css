@@ -11125,6 +11125,11 @@ a.text-dark:focus {
   color: #0182f9;
 }
 
+.single_comics .jumbo img {
+  width: 100vw;
+  height: 100vh;
+}
+
 .single_comics .bg_blue {
   background-color: #0182f9;
   height: 100px;
@@ -11132,11 +11137,11 @@ a.text-dark:focus {
 
 .single_comics .container .img_cover {
   position: absolute;
-  bottom: 220px;
+  bottom: -300px;
 }
 
 .single_comics .container .img_cover img {
-  height: 350px;
+  height: 400px;
   border: 2px solid white;
 }
 
