@@ -2,7 +2,7 @@
 
 @section('main')
 <section class="comics_list mt-5">
-    <div class="container title_section d-flex justify-content-center align-items-center">
+    <div class="container title_section element_center">
         <h3 class="mb-0 py-2">COMIC & GRAPHIC NOVELS</h3>
     </div>
     <div class="comics fluid-container d-flex pt-3">

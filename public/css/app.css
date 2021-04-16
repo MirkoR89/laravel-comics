@@ -34,7 +34,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -66,7 +66,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6407,7 +6407,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6532,7 +6532,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -10944,6 +10944,22 @@ a.text-dark:focus {
   }
 }
 
+* {
+  font-family: "Barlow Condensed", "Open Sans Condensed", sans-serif;
+}
+
+.element_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.element_between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .navtop {
   background-color: #0182f9;
 }
@@ -11145,7 +11161,7 @@ a.text-dark:focus {
   border: 2px solid white;
 }
 
-.single_comics .container .info_comics h2 {
+.single_comics .container h2 {
   font-size: 35px;
   font-weight: 700;
   color: #303030;
@@ -11154,15 +11170,59 @@ a.text-dark:focus {
 .single_comics .container .info_comics .price_available {
   color: white;
   font-size: 18px;
-  font-weight: 500;
-  border-bottom: 1px solid black;
-  width: 720px;
-  height: 70px;
+  font-weight: 600;
+  border-bottom: 0.5px solid black;
+  height: 60px;
   background-color: #55ba5a;
 }
 
 .single_comics .container .info_comics .price_available .price_available_cont {
-  width: 450px;
-  border-right: 1px solid black;
+  width: 80%;
+  height: 60px;
+  padding-right: 20px;
+  border-right: 0.5px solid black;
+}
+
+.single_comics .container .info_comics .price_available .buy_now {
+  width: 20%;
+  height: 60px;
+}
+
+.single_comics .container .info_comics .comics_description {
+  font-size: 18px;
+}
+
+.single_comics .container .community .community_title {
+  color: #0182f9;
+}
+
+.single_comics .container .community .community_title h3 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.single_comics .container .community .community_title span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.single_comics .container .community .event {
+  margin-bottom: 35px;
+}
+
+.single_comics .container .community .event h4 {
+  color: #303030;
+  font-weight: 700;
+}
+
+.single_comics .container .community .event span {
+  color: gray;
+  font-weight: 600;
+}
+
+.single_comics .container .community .event p {
+  color: #303030;
+  font-size: 17px;
+  font-weight: 500;
 }
 

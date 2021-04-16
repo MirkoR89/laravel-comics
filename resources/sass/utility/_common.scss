@@ -1,2 +1,16 @@
-// Typography
+// Utility classes
+* {
+    font-family: $font-family-barlow-condensed;
+}
 
+.element_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.element_between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
