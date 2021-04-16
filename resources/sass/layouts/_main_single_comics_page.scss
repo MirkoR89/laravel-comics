@@ -73,7 +73,7 @@
                 margin-bottom: 35px;
 
                 h4 {
-                    color: $grey-comic;
+                    color: #1c1c1d;
                     font-weight: 700;
                 }
 
@@ -83,12 +83,47 @@
                 }
 
                 p {
-                    color: $grey-comic;
+                    color: #1c1c1d;
                     font-size: 17px;
                     font-weight: 500;
 
                 }
             }
+        }
+
+        .talent_specs_bg {
+            height: 500px;
+            background-color: #f6f6f6;
+            border-top: 1px solid lightgray;
+
+            .talent_specs {
+                h4 {
+                    font-size: 30px;
+                    font-weight: 700;
+                    color: $grey-comic;
+                    margin: 3rem 0;
+                }
+
+                ul {
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+                        list-style-type: none;
+                        color: #00acdb;
+                        font-size: 15px;
+                        font-weight: 600;
+                        border-top: 1px solid lightgray;    
+                        padding: 10px 0;
+
+                        span:first-child {
+                            font-size: 18px;
+                            font-weight: 600;
+                            color: $grey-comic;
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

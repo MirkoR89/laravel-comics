@@ -11006,7 +11006,7 @@ a.text-dark:focus {
 }
 
 .navbottom li a {
-  color: #303030;
+  color: #003f5e;
   padding: 60px 8px;
 }
 
@@ -11021,7 +11021,7 @@ a.text-dark:focus {
   position: relative;
   font-size: 15px;
   font-weight: 700;
-  color: #303030;
+  color: #003f5e;
 }
 
 .navbottom .search span {
@@ -11029,7 +11029,7 @@ a.text-dark:focus {
   position: absolute;
   font-size: 15px;
   font-weight: 700;
-  color: #303030;
+  color: #003f5e;
 }
 
 .dc_menu {
@@ -11083,7 +11083,7 @@ a.text-dark:focus {
 }
 
 .footer_bottom {
-  background-color: #303030;
+  background-color: #003f5e;
 }
 
 .footer_bottom .social {
@@ -11094,7 +11094,7 @@ a.text-dark:focus {
   color: white;
   font-size: 15px;
   font-weight: 600;
-  background-color: #303030;
+  background-color: #003f5e;
   border: 3px solid #0182f9;
   padding: 10px;
 }
@@ -11128,7 +11128,7 @@ a.text-dark:focus {
 }
 
 .comics_list .comics {
-  background-color: #303030;
+  background-color: #003f5e;
   overflow-x: hidden;
 }
 
@@ -11164,7 +11164,7 @@ a.text-dark:focus {
 .single_comics .container h2 {
   font-size: 35px;
   font-weight: 700;
-  color: #303030;
+  color: #003f5e;
 }
 
 .single_comics .container .info_comics .price_available {
@@ -11211,7 +11211,7 @@ a.text-dark:focus {
 }
 
 .single_comics .container .community .event h4 {
-  color: #303030;
+  color: #1c1c1d;
   font-weight: 700;
 }
 
@@ -11221,8 +11221,38 @@ a.text-dark:focus {
 }
 
 .single_comics .container .community .event p {
-  color: #303030;
+  color: #1c1c1d;
   font-size: 17px;
   font-weight: 500;
+}
+
+.single_comics .container .talent_specs_bg {
+  height: 500px;
+  background-color: #f6f6f6;
+  border-top: 1px solid lightgray;
+}
+
+.single_comics .container .talent_specs_bg .talent_specs h4 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #003f5e;
+  margin: 3rem 0;
+}
+
+.single_comics .container .talent_specs_bg .talent_specs ul li {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  color: #00acdb;
+  font-size: 15px;
+  font-weight: 600;
+  border-top: 1px solid lightgray;
+  padding: 10px 0;
+}
+
+.single_comics .container .talent_specs_bg .talent_specs ul li span:first-child {
+  font-size: 18px;
+  font-weight: 600;
+  color: #003f5e;
 }
 

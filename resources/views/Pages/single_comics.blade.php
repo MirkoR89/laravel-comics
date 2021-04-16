@@ -1,5 +1,9 @@
 @extends('layouts.public')
 
+@section('title')
+{{$comic->title }}
+@endsection
+
 @section('main')
     <section class="single_comics">
         <div class="jumbo">
@@ -57,7 +61,37 @@
                         <p>Every month, the Community selects Nightwing comics to read and discuss. Join the fun!</p>
                     </div>
                 </div>
+            </div>
+            
+            <div class="row mt-5 talent_specs_bg ">
+                <div class="talent_specs col-7">
+                    <h4>Talent</h4>
+                    <ul>
+                        <li>
+                            <span>Art by:</span> 
+                            @foreach ($comic->drawers as $drawer)
+                            <span href=""> {{$drawer->name}}, </span>
+                            @endforeach
+                        </li>    
+                        <li>
+                            <span>Written by:</span>
+                            @foreach ($comic->writers as $writer)
+                            <span href=""> {{$writer->name}}, </span> 
+                            @endforeach
+                        </li>
+                    </ul>
+                </div>
 
+                <div class="talent_specs col-5">
+                    <h4>Specs</h4>
+                    <ul>
+                        <li><span>U.S. Price:</span><span>{{$comic->price}}</span></li>
+                        <li><span>On Sale Date:</span><span>{{$comic->on_sale_date}}</span></li>
+                        <li><span>Volume/Issue #:</span><span class="comic_spec">{{$comic->volume_issue}}</span></li>
+                        <li><span>Trim Size:</span><span>{{$comic->trim_size}}</span></li>
+                        <li><span>Page Count:</span><span>{{$comic->page_count}}</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>

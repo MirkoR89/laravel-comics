@@ -1,5 +1,9 @@
 @extends('layouts.public')
 
+@section('title')
+    Comics
+@endsection
+
 @section('main')
 <section class="comics_list mt-5">
     <div class="container title_section element_center">
